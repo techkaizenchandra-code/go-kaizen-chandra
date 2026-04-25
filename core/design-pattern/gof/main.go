@@ -12,4 +12,8 @@ func main() {
 	_ = creational.TestFactory()
 	fmt.Println("\nBuilder:")
 	creational.TestBuilder()
+	fmt.Println("\nPrototype:")
+	_ = creational.TestPrototype()
+	fmt.Println("\nAbstract Factory:")
+	_ = creational.TestAbstractFactory()
 }
