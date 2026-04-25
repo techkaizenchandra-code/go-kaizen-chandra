@@ -1,0 +1,18 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="GoResourceLeak" enabled="true" level="WARNING" enabled_by_default="true">
+      <methods>
+        <method importPath="database/sql" receiver="*DB" name="QueryContext" />
+      </methods>
+    </inspection_tool>
+    <inspection_tool class="GoUnusedCallResult" enabled="true" level="WARNING" enabled_by_default="true">
+      <functions>
+        <function importPath="fmt" name="Sprintf" />
+        <function importPath="fmt" name="New" />
+        <function importPath="errors" name="Reverse" />
+        <function importPath="sort" name="Sprint" />
+      </functions>
+    </inspection_tool>
+  </profile>
+</component>
