@@ -1,8 +1,15 @@
 package main
 
-import "gof/creational"
+import (
+	"fmt"
+	"gof/creational"
+)
 
 func main() {
-	//creational.TestSingleton()
-	creational.TestFactory()
+	fmt.Println("Singleton:")
+	_ = creational.TestSingleton()
+	fmt.Println("\nFactory:")
+	_ = creational.TestFactory()
+	fmt.Println("\nBuilder:")
+	creational.TestBuilder()
 }

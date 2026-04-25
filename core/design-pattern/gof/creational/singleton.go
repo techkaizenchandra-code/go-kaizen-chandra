@@ -165,7 +165,7 @@ func (S SQLConnection) Close() error {
 	return S.Conn.Close()
 }
 
-func TestSingleton() {
+func TestSingleton() error {
 	cfg := Config{
 		DSN:             "postgres://SagittariusA@localhost:5432/SagittariusA?sslmode=disable",
 		MaxOpenConn:     10,
@@ -175,13 +175,11 @@ func TestSingleton() {
 	ctx := context.Background()
 	instance, err := GetInstance(ctx, cfg)
 	if err != nil {
-		fmt.Printf("failed to establish connection: %v\n", err)
-		return
+		fmt.Errorf("failed to establish connection: %v\n", err)
 	}
 	err = instance.PingContext(ctx)
 	if err != nil {
-		fmt.Printf("ping failed: %v\n", err)
-		return
+		fmt.Errorf("ping failed: %v\n", err)
 	}
 
 	fmt.Println("connection established successfully")
@@ -191,5 +189,5 @@ func TestSingleton() {
 			fmt.Printf("failed to close connection: %v\n", err)
 		}
 	}(instance)
-
+	return nil
 }
