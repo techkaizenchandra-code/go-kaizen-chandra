@@ -277,7 +277,7 @@ func BridgePatternDemo() {
 
 	// Create different implementors (message senders)
 	emailSender := NewEmailSender("smtp.example.com", 587)
-	smsSender := NewSMSSender("api-key-123", "https://sms.gateway.com", 3)
+	smsSender := NewSMSSender("sync-key-123", "https://sms.gateway.com", 3)
 	pushSender := NewPushNotificationSender("app-id-456", "server-key-789", "production")
 
 	ctx := context.Background()
